@@ -26,38 +26,53 @@ public interface IMyService {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
+     * @param a
+     * @param b
      * @return
      *     returns int
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
+    @WebResult(name = "addResult", targetNamespace = "")
     @RequestWrapper(localName = "add", targetNamespace = "http://server.webservice.qwt.com/", className = "com.qwt.webservice.looselycoupledclient.Add")
     @ResponseWrapper(localName = "addResponse", targetNamespace = "http://server.webservice.qwt.com/", className = "com.qwt.webservice.looselycoupledclient.AddResponse")
     @Action(input = "http://server.webservice.qwt.com/IMyService/addRequest", output = "http://server.webservice.qwt.com/IMyService/addResponse")
     public int add(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
+        @WebParam(name = "a", targetNamespace = "")
+        int a,
+        @WebParam(name = "b", targetNamespace = "")
+        int b);
 
     /**
      * 
-     * @param arg1
-     * @param arg0
+     * @param a
+     * @param b
      * @return
      *     returns int
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
+    @WebResult(name = "minusResult", targetNamespace = "")
     @RequestWrapper(localName = "minus", targetNamespace = "http://server.webservice.qwt.com/", className = "com.qwt.webservice.looselycoupledclient.Minus")
     @ResponseWrapper(localName = "minusResponse", targetNamespace = "http://server.webservice.qwt.com/", className = "com.qwt.webservice.looselycoupledclient.MinusResponse")
     @Action(input = "http://server.webservice.qwt.com/IMyService/minusRequest", output = "http://server.webservice.qwt.com/IMyService/minusResponse")
     public int minus(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
+        @WebParam(name = "a", targetNamespace = "")
+        int a,
+        @WebParam(name = "b", targetNamespace = "")
+        int b);
+
+    /**
+     * 
+     * @param userId
+     * @return
+     *     returns com.qwt.webservice.looselycoupledclient.User
+     */
+    @WebMethod
+    @WebResult(name = "userResult", targetNamespace = "")
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://server.webservice.qwt.com/", className = "com.qwt.webservice.looselycoupledclient.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://server.webservice.qwt.com/", className = "com.qwt.webservice.looselycoupledclient.GetUserResponse")
+    @Action(input = "http://server.webservice.qwt.com/IMyService/getUserRequest", output = "http://server.webservice.qwt.com/IMyService/getUserResponse")
+    public User getUser(
+        @WebParam(name = "userId", targetNamespace = "")
+        String userId);
 
 }

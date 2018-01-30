@@ -16,6 +16,12 @@
 <message name="minusResponse">
 <part name="parameters" element="tns:minusResponse"></part>
 </message>
+<message name="getUser">
+<part name="parameters" element="tns:getUser"></part>
+</message>
+<message name="getUserResponse">
+<part name="parameters" element="tns:getUserResponse"></part>
+</message>
 <portType name="IMyService">
 <operation name="add">
 <input wsam:Action="http://server.webservice.qwt.com/IMyService/addRequest" message="tns:add"></input>
@@ -24,6 +30,10 @@
 <operation name="minus">
 <input wsam:Action="http://server.webservice.qwt.com/IMyService/minusRequest" message="tns:minus"></input>
 <output wsam:Action="http://server.webservice.qwt.com/IMyService/minusResponse" message="tns:minusResponse"></output>
+</operation>
+<operation name="getUser">
+<input wsam:Action="http://server.webservice.qwt.com/IMyService/getUserRequest" message="tns:getUser"></input>
+<output wsam:Action="http://server.webservice.qwt.com/IMyService/getUserResponse" message="tns:getUserResponse"></output>
 </operation>
 </portType>
 <binding name="MyServiceImplPortBinding" type="tns:IMyService">
@@ -38,6 +48,15 @@
 </output>
 </operation>
 <operation name="minus">
+<soap:operation soapAction=""></soap:operation>
+<input>
+<soap:body use="literal"></soap:body>
+</input>
+<output>
+<soap:body use="literal"></soap:body>
+</output>
+</operation>
+<operation name="getUser">
 <soap:operation soapAction=""></soap:operation>
 <input>
 <soap:body use="literal"></soap:body>

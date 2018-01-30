@@ -3,7 +3,6 @@ package com.qwt.webservice.looselycoupledclient;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -17,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="addResult" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,27 +27,26 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "addResponse", propOrder = {
-    "_return"
+    "addResult"
 })
 public class AddResponse {
 
-    @XmlElement(name = "return")
-    protected int _return;
+    protected int addResult;
 
     /**
-     * Gets the value of the return property.
+     * Gets the value of the addResult property.
      * 
      */
-    public int getReturn() {
-        return _return;
+    public int getAddResult() {
+        return addResult;
     }
 
     /**
-     * Sets the value of the return property.
+     * Sets the value of the addResult property.
      * 
      */
-    public void setReturn(int value) {
-        this._return = value;
+    public void setAddResult(int value) {
+        this.addResult = value;
     }
 
 }

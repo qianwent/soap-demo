@@ -16,7 +16,7 @@ public class TestClient {
 
 		logger.debug("entering into main method.");
 
-		URL url = new URL("http://localhost:8888/ns?wsdl");
+		URL url = new URL("http://localhost:8888/ns?wsdl");//port 7777 is where tcpmon is listening
 		QName qname = new QName("http://server.webservice.qwt.com/", "MyServiceImplService");
 		
 		Service service = Service.create(url, qname);
@@ -24,6 +24,8 @@ public class TestClient {
 		IMyService ms = service.getPort(IMyService.class);
 		
 		System.out.println(ms.minus(11, 2));
+
+		System.out.println(ms.getUser("123").getID());
 		
 	}
 

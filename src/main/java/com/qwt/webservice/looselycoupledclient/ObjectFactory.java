@@ -25,7 +25,9 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _AddResponse_QNAME = new QName("http://server.webservice.qwt.com/", "addResponse");
+    private final static QName _GetUser_QNAME = new QName("http://server.webservice.qwt.com/", "getUser");
     private final static QName _Add_QNAME = new QName("http://server.webservice.qwt.com/", "add");
+    private final static QName _GetUserResponse_QNAME = new QName("http://server.webservice.qwt.com/", "getUserResponse");
     private final static QName _Minus_QNAME = new QName("http://server.webservice.qwt.com/", "minus");
     private final static QName _MinusResponse_QNAME = new QName("http://server.webservice.qwt.com/", "minusResponse");
 
@@ -45,6 +47,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetUserResponse }
+     * 
+     */
+    public GetUserResponse createGetUserResponse() {
+        return new GetUserResponse();
+    }
+
+    /**
      * Create an instance of {@link Minus }
      * 
      */
@@ -61,11 +71,27 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetUser }
+     * 
+     */
+    public GetUser createGetUser() {
+        return new GetUser();
+    }
+
+    /**
      * Create an instance of {@link MinusResponse }
      * 
      */
     public MinusResponse createMinusResponse() {
         return new MinusResponse();
+    }
+
+    /**
+     * Create an instance of {@link User }
+     * 
+     */
+    public User createUser() {
+        return new User();
     }
 
     /**
@@ -78,12 +104,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUser }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.webservice.qwt.com/", name = "getUser")
+    public JAXBElement<GetUser> createGetUser(GetUser value) {
+        return new JAXBElement<GetUser>(_GetUser_QNAME, GetUser.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Add }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://server.webservice.qwt.com/", name = "add")
     public JAXBElement<Add> createAdd(Add value) {
         return new JAXBElement<Add>(_Add_QNAME, Add.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://server.webservice.qwt.com/", name = "getUserResponse")
+    public JAXBElement<GetUserResponse> createGetUserResponse(GetUserResponse value) {
+        return new JAXBElement<GetUserResponse>(_GetUserResponse_QNAME, GetUserResponse.class, null, value);
     }
 
     /**
