@@ -1,4 +1,4 @@
-package com.qwt.webservice.coupled;
+package com.qwt.webservice.server;
 
 import javax.jws.WebService;
 

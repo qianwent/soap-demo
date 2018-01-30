@@ -1,8 +1,8 @@
-package com.qwt.webservice.coupled;
+package com.qwt.webservice.server;
 
 import javax.jws.WebService;
 
-@WebService(endpointInterface="com.qwt.webservice.coupled.IMyService")
+@WebService(endpointInterface= "com.qwt.webservice.server.IMyService")
 public class MyServiceImpl implements IMyService {
 
 	@Override
