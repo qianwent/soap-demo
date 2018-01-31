@@ -2,6 +2,7 @@
 <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/02"
         xmlns:tns="http://www.example.org/02" elementFormDefault="qualified">
 
+    <!--this schema is not good, can't reuse element-->
     <element name="books">
         <complexType>
             <!-- maxOccurs表示最大出现次数 -->

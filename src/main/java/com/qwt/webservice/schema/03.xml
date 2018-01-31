@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<book xmlns="http://www.example.org/03">
+    <id>1</id>
+    <title>abc</title>
+    <content>abc content</content>
+</book>
