@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<aaa:person xmlns:aaa="http://www.example.org/04"
+            sex="男">
+    <aaa:name>aaa</aaa:name>
+    <aaa:age>18</aaa:age>
+    <aaa:email>abc@gmail.com</aaa:email>
+</aaa:person>
