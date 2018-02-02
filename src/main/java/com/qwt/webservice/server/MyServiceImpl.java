@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Objects;
 
 @WebService(endpointInterface= "com.qwt.webservice.server.IMyService", targetNamespace = "https://www.qwt.com")
-@HandlerChain(file= "handler-chain.xml")
+@HandlerChain(file= "handler-chain.xml")//只要在server端的实现类标注即可
 public class MyServiceImpl implements IMyService {
 
 	private static List<User> userList = new ArrayList<>();
