@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@WebService(endpointInterface= "com.qwt.webservice.server.IMyService")
+@WebService(endpointInterface= "com.qwt.webservice.server.IMyService", targetNamespace = "www.qwt.com")
 public class MyServiceImpl implements IMyService {
 
 	private static List<User> userList = new ArrayList<>();

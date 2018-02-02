@@ -7,7 +7,11 @@ import javax.jws.WebResult;
 import javax.jws.WebService;
 import java.util.List;
 
-@WebService
+@WebService(targetNamespace = "www.qwt.com")
+//如果只在这里添加targetNamespace而不在实现类里指定，
+// 则在wsdl里会出现<import namespace="www.qwt.com" location="http://localhost:8888/ns?wsdl=1"/>
+// 而targetNamespace="http://server.webservice.qwt.com/" 仍然用的是实现类的包名
+// 所以还得在实现类里指定targetNamespace="www.qwt.com"
 public interface IMyService {
 
 	@WebResult(name = "addResult")
