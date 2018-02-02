@@ -8,6 +8,14 @@ public class User {
     private String username;
     private String password;
 
+    public User() {}
+
+    public User(String ID, String username, String password) {
+        this.ID = ID;
+        this.username = username;
+        this.password = password;
+    }
+
     public String getID() {
         return ID;
     }
