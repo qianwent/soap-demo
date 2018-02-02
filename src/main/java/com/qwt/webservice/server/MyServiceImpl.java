@@ -1,5 +1,6 @@
 package com.qwt.webservice.server;
 
+import com.qwt.webservice.server.exception.UserException;
 import com.qwt.webservice.server.model.User;
 
 import javax.jws.WebService;
@@ -7,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-@WebService(endpointInterface= "com.qwt.webservice.server.IMyService", targetNamespace = "www.qwt.com")
+@WebService(endpointInterface= "com.qwt.webservice.server.IMyService", targetNamespace = "https://www.qwt.com")
 public class MyServiceImpl implements IMyService {
 
 	private static List<User> userList = new ArrayList<>();
@@ -45,12 +46,12 @@ public class MyServiceImpl implements IMyService {
 	}
 
 	@Override
-	public User login(String username, String password) {
+	public User login(String username, String password) throws UserException{
 		return userList.stream()
 				.filter(Objects::nonNull)
 				.filter(user -> Objects.nonNull(user.getUsername()) && Objects.nonNull(user.getPassword())
 						&& user.getUsername().equals(username) && user.getPassword().equals(password))
-				.findFirst().orElse(null);
+				.findFirst().orElseThrow(()->new UserException("User does not exist! \n"));
 	}
 
 	@Override
